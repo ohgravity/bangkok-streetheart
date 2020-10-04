@@ -24,33 +24,16 @@ var commentRoutes    = require("./routes/comments"),
 // assign mongoose promise library and connect to database
 mongoose.Promise = global.Promise;
 
-
-// const databaseUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/yelp_meme/v3';
-
-// mongoose.connect('mongodb://localhost:27017/yelp_meme', {no
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// })
-// .then(() => console.log('Connected to DB!'))
-// .catch(error => console.log(error.message));
-
-// mongoose.connect("mongodb+srv://sarasegel:NY%253z%26EN%402k%23S5T1@yelpcamp.owjlv.mongodb.net/test?retryWrites=true"); 
-
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://sarasegel:NY%253z%26EN%402k%23S5T1@yelpcamp.owjlv.mongodb.net/yelpcamp?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-	console.log("MongoDB connected!");
-  client.close();
+mongoose.connect("mongodb+srv://sarasegel:NY%253z%26EN%402k%23S5T1@yelpcamp.owjlv.mongodb.net/yelpcamp?retryWrites=true", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+}).then(() => {
+  console.log("Connected to DB!");
+}).catch(err => {
+  console.log("ERROR", err.message);
 });
-
-// var databaseUri = 'mongodb://localhost:27017/yelp_meme/v3';
-// mongoose.connect(databaseUri, { useMongoClient: true })
-//       .then(() => console.log(`Database connected at ${databaseUri}`))
-//       .catch(err => console.log(`Database connection error: ${err.message}`));
-
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
