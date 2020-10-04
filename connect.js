@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
  
 // Replace the following with your Atlas connection string                                                                                                                                        
 
-const url = "mongodb+srv://sarasegel:NY%253z%26EN%402k%23S5T1@yelpcamp.owjlv.mongodb.net/yelpcamp?retryWrites=true&w=majority";
+const url = "mongodb+srv://sarasegel:NY%253z%26EN%402k%23S5T1@yelpcamp.owjlv.mongodb.net/yelpcamp?retryWrites=true";
 
 const client = new MongoClient(url);
 

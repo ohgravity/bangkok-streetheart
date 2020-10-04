@@ -1,3 +1,7 @@
+// configure dotenv
+require('dotenv').load();
+
+
 var express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
@@ -13,8 +17,6 @@ var express     = require("express"),
     seedDB      = require("./seeds"),
     methodOverride = require("method-override");
 
-// configure dotenv
-require('dotenv').load();
 
 // requiring routes
 var commentRoutes    = require("./routes/comments"),
@@ -22,7 +24,7 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
     
 // assign mongoose promise library and connect to database
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb+srv://sarasegel:NY%253z%26EN%402k%23S5T1@yelpcamp.owjlv.mongodb.net/yelpcamp?retryWrites=true", {
   useNewUrlParser: true,
