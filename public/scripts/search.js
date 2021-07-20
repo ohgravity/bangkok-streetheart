@@ -3,7 +3,7 @@ $('#campground-search').on('input', function() {
   if(search === "search=") {
     search = "all"
   }
-  $.get('/campgrounds?' + search, function(data) {
+  $.get('/snaps?' + search, function(data) {
     $('#campground-grid').html('');
     data.forEach(function(campground) {
       $('#campground-grid').append(`
@@ -14,7 +14,7 @@ $('#campground-search').on('input', function() {
               <h4>${ campground.name }</h4>
             </div>
             <p>
-              <a href="/campgrounds/${ campground._id }" class="btn btn-primary">More Info</a>
+              <a href="/snaps/${ campground._id }" class="btn btn-primary">More Info</a>
             </p>
           </div>
         </div>

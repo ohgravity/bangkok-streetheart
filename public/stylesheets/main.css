@@ -7,6 +7,8 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+	/* background-image: url(https://images.unsplash.com/photo-1551217624-a2de6db7e01d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80); */
+	background-color: cornflowerblue;
 }
 .footer {
   position: absolute;
@@ -28,6 +30,15 @@ body {
 
 .thumbnail {
     padding: 0;
+		background: #fff;
+}
+
+.thumbnail {
+		padding-bottom: .5em;
+}
+
+.thumbnail h4 {
+	padding-top: .5em;
 }
 
 .thumbnail .caption-full {

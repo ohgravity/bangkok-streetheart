@@ -77,7 +77,7 @@ router.post("/", isLoggedIn, isSafe, function(req, res){
         } else {
             //redirect back to campgrounds page
             console.log(newlyCreated);
-            res.redirect("/campgrounds");
+            res.redirect("/snaps");
         }
     });
 });
@@ -94,7 +94,7 @@ router.get("/:id", function(req, res){
         if(err || !foundCampground){
             console.log(err);
             req.flash('error', 'Sorry, that campground does not exist!');
-            return res.redirect('/campgrounds');
+            return res.redirect('/snaps');
         }
         console.log(foundCampground)
         //render show template with that campground
@@ -130,7 +130,7 @@ router.put("/:id", isSafe, function(req, res){
             res.redirect("back");
         } else {
             req.flash("success","Successfully Updated!");
-            res.redirect("/campgrounds/" + campground._id);
+            res.redirect("/snaps/" + campground._id);
         }
     });
 });
@@ -152,7 +152,7 @@ router.delete("/:id", isLoggedIn, checkUserCampground, function(req, res) {
                 return res.redirect('/');
             }
             req.flash('error', 'Campground deleted!');
-            res.redirect('/campgrounds');
+            res.redirect('/snaps');
           });
       }
     })

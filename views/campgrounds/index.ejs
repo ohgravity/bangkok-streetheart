@@ -2,17 +2,17 @@
 
      <header class="jumbotron">
          <div class="container">
-             <h1><span class="glyphicon glyphicon-tent"></span> Welcome To YelpCamp!</h1>
-             <p>View our hand-picked campgrounds from all over the world</p>
+             <h1>Bangkok ♥ Streetheart</h1>
+             <p><em>Street art found a way to your heart</em></p>
              <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                <a class="btn btn-primary btn-lg" href="/snaps/new">Add New Snap</a>
              </p>
               <p>
-              <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+              <!-- <form action="/snaps" method="GET" class="form-inline" id="campground-search">
                 <div class="form-group">
-                  <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                  <input type="text" name="search" placeholder="Type, e.g., Stencil" class="form-control">
                 </div>
-              </form>
+              </form> -->
              </p>
          </div>
      </header>
@@ -26,7 +26,7 @@
                        <h4><%= campground.name %></h4>
                    </div>
                    <p>
-                       <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                       <a href="/snaps/<%= campground._id %>" class="btn btn-primary">More Info</a>
                    </p>
                 </div>
             </div>
